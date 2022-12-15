@@ -2,6 +2,18 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #EEEEEE;
+}
+
+.content {
+    font-family: "Montserrat", sans-serif;
+    width: 800px;
+    margin: 40px auto;
+    padding: 0 10px 0 12px;
 }
 
 header {
@@ -14,6 +26,7 @@ header {
 
 .logo {
     margin-right: auto;
+
 }
 
 .nav__links {
@@ -97,6 +110,7 @@ header {
 .overlay a:focus {
     color: #0088a9;
 }
+
 .overlay .close {
     position: absolute;
     top: 20px;
@@ -110,6 +124,11 @@ header {
     .overlay a {
         font-size: 20px;
     }
+
+    .content {
+        width: auto;
+    }
+
     .overlay .close {
         font-size: 40px;
         top: 15px;
@@ -121,6 +140,9 @@ header {
     .nav__links,
     .cta {
         display: none;
+    }
+    .content {
+        width: auto;
     }
     .menu {
         display: initial;

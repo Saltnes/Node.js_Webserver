@@ -9,11 +9,25 @@ body {
     background-color: #EEEEEE;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
+figure{
+    padding: 1em 0 0.5em;
+}
+
+.container {
+    padding: 1em 1em;
+    border: 2px solid lightpink;
+}
+
 .content {
     font-family: "Montserrat", sans-serif;
-    width: 800px;
-    margin: 40px auto;
-    padding: 0 10px 0 12px;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0;
 }
 
 header {
@@ -43,11 +57,11 @@ header {
 }
 
 .nav__links li {
-    padding: 0px 20px;
+    padding: 0 1.5em;
 }
 
 .nav__links li a {
-    transition: all 0.3s ease 0s;
+    transition: all 0.4s ease 0s;
 }
 
 .nav__links li a:hover {
@@ -140,9 +154,11 @@ header {
     .cta {
         display: none;
     }
+
     .content {
         width: auto;
     }
+
     .menu {
         display: initial;
     }

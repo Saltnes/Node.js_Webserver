@@ -14,16 +14,22 @@ img {
     display: block;
 }
 
-figure{
+figure {
     padding: 1em 0 0.5em;
 }
 
+/*
+p{
+    font-size: clamp(9px, 1px + 10vw ,16px);
+}
+*/
 .container {
     padding: 1em 1em;
     border: 2px solid lightpink;
 }
 
 .content {
+
     font-family: "Montserrat", sans-serif;
     max-width: 60rem;
     margin: 0 auto;

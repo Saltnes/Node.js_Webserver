@@ -29,7 +29,7 @@ p{
 */
 .container {
     padding: 1em 1em;
-    /*border: 2px solid lightpink; */
+    border: 2px solid lightpink;
 }
 
 .content {

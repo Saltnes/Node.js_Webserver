@@ -18,6 +18,10 @@ figure {
     padding: 1em 0 0.5em;
 }
 
+iframe {
+    border: 0;
+}
+
 /*
 p{
     font-size: clamp(9px, 1px + 10vw ,16px);
@@ -36,6 +40,7 @@ p{
     padding: 0;
 }
 
+/*-----NAV-----*/
 header {
     display: flex;
     justify-content: flex-end;
@@ -43,6 +48,7 @@ header {
     padding: 30px 10%;
     background-color: #24252a;
 }
+
 
 .logo {
     margin-right: auto;
@@ -138,6 +144,48 @@ header {
     color: #edf0f1;
     cursor: pointer;
 }
+
+/*------TABLE------*/
+#table-template {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#table-template td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#table-template tr:nth-child(even) {
+    background-color: #e5e3e3;
+}
+
+#table-template tr:hover {
+    background-color: #ddd;
+}
+
+#table-template th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #24252a;
+    color: white;
+}
+
+/*-----LINK STYLING-----*/
+
+.link:link {
+    color: dimgrey;
+}
+
+.link:visited {
+    color: deeppink;
+}
+
+.link:hover {
+    color: hotpink;
+}
+
 
 @media screen and (max-height: 450px) {
     .overlay a {

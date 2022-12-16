@@ -27,17 +27,15 @@ p{
     font-size: clamp(9px, 1px + 10vw ,16px);
 }
 */
-.container {
-    padding: 1em 1em;
-    border: 2px solid lightpink;
-}
-
 .content {
-
     font-family: "Montserrat", sans-serif;
     max-width: 60rem;
     margin: 0 auto;
-    padding: 0;
+}
+
+.container {
+    padding: 1em 1em;
+    border: 2px solid lightpink;
 }
 
 /*-----NAV-----*/
@@ -95,7 +93,7 @@ header {
     background-color: rgba(0, 136, 169, 0.8);
 }
 
-/* Mobile Nav */
+/*----MOBILE NAV----*/
 
 .menu {
     display: none;

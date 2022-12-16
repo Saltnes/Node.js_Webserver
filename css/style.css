@@ -7,6 +7,7 @@
 
 body {
     background-color: #EEEEEE;
+    font-family: "Montserrat", sans-serif;
 }
 
 img {
@@ -20,6 +21,10 @@ figure {
 
 iframe {
     border: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding-bottom: 0.4rem;
 }
 
 /*
@@ -45,6 +50,14 @@ header {
     align-items: center;
     padding: 30px 10%;
     background-color: #24252a;
+}
+
+footer {
+    font-size: clamp(8px,1px + 10vw,14px);
+    padding: 1% 5%;
+    text-align: center;
+    background-color: #24252a;
+    color: #EEEEEE;
 }
 
 

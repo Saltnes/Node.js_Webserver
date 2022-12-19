@@ -41,7 +41,7 @@ p{
 /*--Padding so content in the container does not hit the edges of the screen--*/
 .container {
     padding: 0.5em 0.5em;
-    border: 2px solid lightpink;
+    /*border: 2px solid lightpink;*/
 }
 
 /*-----NAVBAR-----*/

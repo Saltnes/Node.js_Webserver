@@ -27,6 +27,17 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 0.4rem;
 }
 
+.centerfooter {
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+}
+
+#MoveToTop {
+    height: auto;
+    width: auto;
+}
+
 /*
 p{
     font-size: clamp(9px, 1px + 10vw ,16px);
@@ -54,7 +65,7 @@ header {
 }
 
 footer {
-    font-size: clamp(8px,1px + 10vw,14px);
+    font-size: clamp(8px, 1px + 10vw, 14px);
     padding: 1% 5%;
     text-align: center;
     background-color: #24252a;

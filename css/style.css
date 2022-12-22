@@ -8,6 +8,7 @@
 body {
     background-color: #EEEEEE;
     font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
 }
 
 img {
@@ -101,13 +102,13 @@ footer {
 }
 
 .nav__links li a:hover {
-    color: #0088a9;
+    color: #a90049;
 }
 
 .cta {
     margin-left: 20px;
     padding: 9px 25px;
-    background-color: rgba(0, 136, 169, 1);
+    background-color: #a90049;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -115,7 +116,7 @@ footer {
 }
 
 .cta:hover {
-    background-color: rgba(0, 136, 169, 0.8);
+    background-color: #a90049;
 }
 
 /*----MOBILE NAV----*/
@@ -157,7 +158,7 @@ footer {
 
 .overlay a:hover,
 .overlay a:focus {
-    color: #0088a9;
+    color: #a90049;
 }
 
 .overlay .close {
@@ -199,7 +200,7 @@ footer {
 /*-----LINK STYLING-----*/
 
 .link:link {
-    color: dimgrey;
+    color: red;
 }
 
 .link:visited {
@@ -213,7 +214,7 @@ footer {
 
 @media screen and (max-height: 450px) {
     .overlay a {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
     .content {
@@ -221,7 +222,7 @@ footer {
     }
 
     .overlay .close {
-        font-size: 40px;
+        font-size: 2.5rem;
         top: 15px;
         right: 35px;
     }
@@ -235,6 +236,7 @@ footer {
 
     .content {
         width: auto;
+        font-size: 1rem;
     }
 
     .menu {

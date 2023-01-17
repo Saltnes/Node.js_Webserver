@@ -39,6 +39,13 @@ h1, h2, h3, h4, h5, h6 {
     width: auto;
 }
 
+/*SCROLL NAVIGATION */
+#Installation, #Setup, #Configuration, Temp2 {
+    height: auto;
+    width: auto;
+}
+
+
 /*
 p{
     font-size: clamp(9px, 1px + 10vw ,16px);
@@ -72,8 +79,6 @@ footer {
     background-color: #24252a;
     color: #EEEEEE;
 }
-
-
 
 .logo {
     width: 3.5rem;
@@ -131,7 +136,7 @@ footer {
     width: 0;
     position: fixed;
     z-index: 1;
-    left: 0;
+    right: 0;
     top: 0;
     background-color: #24252a;
     overflow-x: hidden;
@@ -139,7 +144,7 @@ footer {
 }
 
 .overlay--active {
-    width: 100%;
+    width: 60%;
 }
 
 .overlay__content {

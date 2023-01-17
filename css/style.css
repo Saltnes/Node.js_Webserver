@@ -4,6 +4,8 @@
     padding: 0;
     scroll-behavior: smooth;
 }
+                            /*NODE COLOUR SET*/
+/* NODE GREY : #303030 | NODE LIGHT GREEN: #63A063 | NODE GREEN: #3C873A */
 
 body {
     background-color: #EEEEEE;
@@ -40,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*SCROLL NAVIGATION */
-#Installation, #Setup, #Configuration, Temp2 {
+#Installation, #Setup, #Configuration, #Temp2 {
     height: auto;
     width: auto;
 }
@@ -69,6 +71,7 @@ header {
     justify-content: flex-end;
     align-items: center;
     padding: 30px 10%;
+    margin-bottom: 30px;
     background-color: #24252a;
 }
 
@@ -78,6 +81,8 @@ footer {
     text-align: center;
     background-color: #24252a;
     color: #EEEEEE;
+    margin-top: 30px;
+
 }
 
 .logo {

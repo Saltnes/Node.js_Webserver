@@ -2,10 +2,10 @@
   "name": "html_templatev2",
   "version": "1.0.0",
   "description": "",
-  "main": "JS/logEvents.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon index"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",

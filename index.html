@@ -23,8 +23,6 @@
     <nav>
         <ul class="nav__links">
             <li id="MoveToTop"><a href="index.html">Home</a></li>
-            <li><a href="#Installation">Installation</a></li>
-            <li><a href="#Configuration">Configuration</a></li>
         </ul>
     </nav>
     <a class="cta" href="contact.html">About</a>
@@ -35,15 +33,13 @@
     <a class="close">&times;</a>
     <div class="overlay__content">
         <a href="index.html">Home</a>
-        <a href="#Installation">Installation</a>
-        <a href="#Configuration">Configuration</a>
         <a href="contact.html">About</a>
     </div>
 </div>
 
 <div class="content">
     <div class="container">
-        <h1>Node.js Web Server Tutorial</h1>
+        <h1>Node.js Web-Server Setup</h1>
     </div>
     <div class="container">
         <!-- TABLE TEMPLATE -->
@@ -76,6 +72,7 @@
             be where we write code to get the webserver itself running and to provide a log for the GET requests with
             time, date and what has been requested. Which will look something like this for the terminal and for the
             logfile itself below that:
+        </p>
         <pre>
         <code>
 / GET
@@ -93,40 +90,66 @@
 20230124	10:30:17	6c9cc053-48bc-414f-afba-99c8805b60c0	/images/logo.svg	GET
         </code>
     </pre>
-        </p>
     </div>
 
     <!-- NODE SETUP = INSTALL REQUIRED DEPENDENCIES ETC. FILE DIRECTORIES.... | nmp i nodemon -g | globaly install nodemon | npm i date-fns  | npm i uuid | npm i nodemon -D|-->
     <div class="container">
         <h2 id="Configuration">Configuration</h2>
         <p>
-            Let's get the required dependencies installed. Open the terminal in your IDE of choice and type <em>npm i
-            nodemon -g</em> which will monitor our files and automatically restarts the server when we save. Now let's
-            do <em>npm init</em> you can do <em>npm init -y</em> to automatically answer yes to all the questions. npm
-            init will get our package.json file which NPM will read, so it knows what packages are installed for our
-            project. Now change "main":"index.js", to "main":"server.js",
+            Let's get the required dependencies installed. Open the terminal in your IDE of choice and type
+            <br/><em><b>npm i
+            nodemon -g</b></em> which will monitor our files and automatically restarts the server when we save. Now
+            let's do
+            <br/><b><em>npm init</em></b> you can do <b><em>npm init -y</em></b> to automatically answer yes to all the
+            questions. npm
+            init will get our package.json file which NPM will read, so it knows what packages are installed in our
+            project. Now install
+            <br/><b><em>npm i date-fns</em></b> which we will use for our logging. you should now see that your
+            package.json has the dependency "date-fns" As we add dependencies our node_modules folder will get quite
+            large so add a <b>.gitignore</b> file and in the file write node_modules. Now if you clone your project from
+            GitHub
+            you will have to run
+            <br/><b><em>npm install</em></b> to install the dependencies needed for the project.<br/> Write <b><em>npm i
+            nodemon -D</em></b> to install nodemon as a dev dependency.</br> Now type <b><em>npm i uuid</em></b> which
+            we will use to give unique IDs in our log.
+        </p>
+        <br>
+        <br>
+        <p>
+            In the package.json file add two scripts which will be "start" and "dev" we will use the dev script to run
+            our server.
+        <pre><code>
+"scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+    </code></pre>
+        Now our package file should look something like this:
+        </p>
         <pre>
-            <code class="language-jsx">
-const serveFile = async (filePath, contentType, response) => {
-    try {
-        const rawData = await fsPromises.readFile(
-            filePath,
-            !contentType.includes('image', 'video') ? 'utf-8' : '');
-        const data = contentType === 'application/json' ? JSON.parse(rawData) : rawData;
-        response.writeHead(200, {'Content-Type': contentType})
-        response.end(
-            contentType === 'application/json' ? JSON.stringify(data) : data
-        );
-    } catch (err) {
-        console.log(err);
-        response.statusCode = 500;
-        response.end();
-    }
+            <code class="language-json">
+{
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "description": "Node.js Web Server tutorial",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "author": "your-name",
+  "license": "ISC",
+  "dependencies": {
+    "date-fns": "^2.23.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
             </code>
 
         </pre>
-        </p>
         <figure>
             <a href="images/width=2968.jpg" target="_blank">
                 <img src="images/image85q.webp" alt="A Picture">

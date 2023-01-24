@@ -35,7 +35,14 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     font-size: 13px;
 }
-
+/*
+pre code {
+    background-color: #a41515;
+    border: 1px solid #b20000;
+    display: block;
+    padding: 20px;
+}
+*/
 #MoveToTop {
     height: auto;
     width: auto;
@@ -70,7 +77,7 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 30px 10%;
+    padding: 10px 10%;
     margin-bottom: 30px;
     background-color: #24252a;
 }
@@ -86,7 +93,7 @@ footer {
 }
 
 .logo {
-    width: 3.5rem;
+    width: 4.5rem;
     margin-right: auto;
 }
 
@@ -113,13 +120,13 @@ footer {
 }
 
 .nav__links li a:hover {
-    color: #a90049;
+    color: #68A063;
 }
 
 .cta {
     margin-left: 20px;
     padding: 9px 25px;
-    background-color: #a90049;
+    background-color: #3C873A;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -127,7 +134,7 @@ footer {
 }
 
 .cta:hover {
-    background-color: #a90049;
+    background-color: #68A063;
 }
 
 /*----MOBILE NAV----*/
@@ -169,7 +176,7 @@ footer {
 
 .overlay a:hover,
 .overlay a:focus {
-    color: #a90049;
+    color: #68A063;
 }
 
 .overlay .close {
@@ -211,15 +218,15 @@ footer {
 /*-----LINK STYLING-----*/
 
 .link:link {
-    color: red;
+    color: #3C873A;
 }
 
 .link:visited {
-    color: deeppink;
+    color: #303030;
 }
 
 .link:hover {
-    color: hotpink;
+    color: #68A063;
 }
 
 

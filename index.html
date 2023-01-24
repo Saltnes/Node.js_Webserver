@@ -9,6 +9,11 @@
     <link rel="icon" type="image/x-icon" href="images/logo.svg">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/base16/onedark.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
 </head>
 <body>
 
@@ -65,14 +70,14 @@
         </table>
 
     </div>
-<!-- nmp i nodemon -g | globaly install nodemon | npm i date-fns  | npm i uuid | npm i nodemon -D|-->
+    <!-- nmp i nodemon -g | globaly install nodemon | npm i date-fns  | npm i uuid | npm i nodemon -D|-->
 
     <div id="Installation" class="container">
         <h2>Installing Node.js</h2>
         <p>
             Download: <a class="link" href="https://nodejs.dev/en/download/">Node.js</a> restart PC when Node is
-            installed, open your IDE create a new project or use a current project. Create the file server.js this will
-            be where we write our code and get the webserver running!
+            installed, open your IDE create a new project or use a current project. Create the file server.js and logEvents this will
+            be where we write code to get the webserver running!
         </p>
     </div>
 
@@ -90,20 +95,27 @@
             facilis harum ipsam iure, maxime nihil non officia provident quaerat quas quia quisquam quos repellendus
             reprehenderit sunt unde velit voluptatem. Cumque exercitationem fuga id magni quisquam voluptate.
             Accusantium, assumenda deleniti deserunt distinctio doloribus esse facilis hic laudantium magnam minima
-            necessitatibus numquam odio quae, quidem, quod reiciendis repellat tempora temporibus ut voluptatem? Animi
-            est minus molestiae nisi odio praesentium quos repellendus rerum soluta tenetur! Aliquid beatae blanditiis
-            iure quis! Dolorem dolores iure nesciunt quia. A ad alias atque dolorem doloribus eligendi eum
-            exercitationem expedita explicabo facilis inventore laudantium maiores molestiae molestias officiis
-            pariatur, perferendis praesentium quas quia quod sapiente ullam ut veritatis. Doloribus ipsa porro repellat
-            repudiandae vero! Accusantium cumque ipsa laboriosam. Aut earum eligendi et fugiat id incidunt labore
-            maiores molestiae mollitia necessitatibus officiis omnis pariatur quaerat, quam quasi qui quibusdam quis,
-            quisquam recusandae rem repellat reprehenderit sint. A accusantium atque autem cupiditate deserunt, dicta
-            doloremque doloribus est fugiat itaque molestias necessitatibus nesciunt non praesentium quam quis ratione
-            sapiente sequi sint temporibus ullam vitae voluptatem. Ab ad debitis ducimus esse est et, expedita illo
-            inventore laudantium magni minima mollitia necessitatibus nemo nihil nisi obcaecati, odio officiis porro
-            possimus quam quasi quos reiciendis saepe similique, suscipit temporibus ut veritatis? Amet cum cumque in
-            soluta! A accusantium ad adipisci at aut blanditiis doloremque ducimus earum eos fugiat hic impedit ipsum
-            iure nesciunt numquam officia omnis quod repudiandae totam, velit.
+        <pre>
+            <code class="language-jsx">
+const serveFile = async (filePath, contentType, response) => {
+    try {
+        const rawData = await fsPromises.readFile(
+            filePath,
+            !contentType.includes('image', 'video') ? 'utf-8' : '');
+        const data = contentType === 'application/json' ? JSON.parse(rawData) : rawData;
+        response.writeHead(200, {'Content-Type': contentType})
+        response.end(
+            contentType === 'application/json' ? JSON.stringify(data) : data
+        );
+    } catch (err) {
+        console.log(err);
+        response.statusCode = 500;
+        response.end();
+    }
+}
+            </code>
+
+        </pre>
         </p>
         <figure>
             <a href="images/width=2968.jpg" target="_blank">

@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/base16/onedark.min.css">
+    <link rel="stylesheet"
+          href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/base16/onedark.min.css">
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
@@ -23,11 +24,10 @@
         <ul class="nav__links">
             <li id="MoveToTop"><a href="index.html">Home</a></li>
             <li><a href="#Installation">Installation</a></li>
-            <li><a href="#Setup">Setup</a></li>
             <li><a href="#Configuration">Configuration</a></li>
         </ul>
     </nav>
-    <a class="cta" href="html/contact.html">About</a>
+    <a class="cta" href="contact.html">About</a>
     <p class="menu cta">Menu</p>
 </header>
 
@@ -36,9 +36,8 @@
     <div class="overlay__content">
         <a href="index.html">Home</a>
         <a href="#Installation">Installation</a>
-        <a href="#Setup">Setup</a>
         <a href="#Configuration">Configuration</a>
-        <a href="html/contact.html">About</a>
+        <a href="contact.html">About</a>
     </div>
 </div>
 
@@ -59,9 +58,6 @@
                 <td><a class="link" href="#Installation">Installation</a></td>
             </tr>
             <tr>
-                <td><a class="link" href="#Setup">Setup</a></td>
-            </tr>
-            <tr>
                 <td><a class="link" href="#Configuration">Configuration</a></td>
             </tr>
             <tr>
@@ -74,27 +70,41 @@
     <div id="Installation" class="container">
         <h2>Installing Node.js</h2>
         <p>
-            Download: <a class="link" href="https://nodejs.dev/en/download/">Node.js</a> restart PC when Node is
-            installed, open your IDE create a new project or use a current project. Create the file server.js and logEvents this will
-            be where we write code to get the webserver running!
+            Download: <a class="link" href="https://nodejs.dev/en/download/">Node.js</a> restart PC when the
+            installation has completed, open your IDE create a new project or use a current project. Create two files
+            server.js and logEvents this will
+            be where we write code to get the webserver itself running and to provide a log for the GET requests with
+            time, date and what has been requested. Which will look something like this for the terminal and for the
+            logfile itself below that:
+        <pre>
+        <code>
+/ GET
+/css/style.css GET
+/JS/mobile.js GET
+/images/logo.svg GET
+/images/image85q.webp GET
+/images/logo.svg GET
+
+20230124	10:30:17	812297ca-53d4-4545-88c6-7bc672878405	/	GET
+20230124	10:30:17	13cf030e-cb0e-448d-9d2b-93dd83650284	/css/style.css	GET
+20230124	10:30:17	6f8e980a-7a79-48a8-9d32-cfcf62712c35	/JS/mobile.js	GET
+20230124	10:30:17	87a0340f-a821-4db6-96c5-8674f5eec223	/images/logo.svg	GET
+20230124	10:30:17	e3717a9a-0528-43b4-8dd1-1cd15bf9f5d8	/images/image85q.webp	GET
+20230124	10:30:17	6c9cc053-48bc-414f-afba-99c8805b60c0	/images/logo.svg	GET
+        </code>
+    </pre>
         </p>
     </div>
 
     <!-- NODE SETUP = INSTALL REQUIRED DEPENDENCIES ETC. FILE DIRECTORIES.... | nmp i nodemon -g | globaly install nodemon | npm i date-fns  | npm i uuid | npm i nodemon -D|-->
     <div class="container">
-        <h2 id="Configuration">Configurating Node</h2>
+        <h2 id="Configuration">Configuration</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis, cumque, dolorem eligendi esse
-            ipsum itaque nam nihil quas quisquam repellendus sequi soluta voluptatibus? Ab ad architecto beatae
-            consequuntur delectus deserunt distinctio dolorem eaque, eos et excepturi fuga fugit, illo impedit ipsum
-            laboriosam magnam maiores maxime nihil non officiis perspiciatis, possimus praesentium repellendus saepe
-            sequi sunt ullam unde vitae voluptatum? Ab adipisci aspernatur beatae, commodi deleniti deserunt dignissimos
-            ea esse eum eveniet fugit id illo ipsam maiores minus modi nam necessitatibus nemo nesciunt nihil numquam
-            obcaecati optio pariatur perspiciatis possimus quasi quod repellendus sapiente sequi sit sunt totam velit
-            vero. Ab aliquam amet consequuntur, culpa delectus dicta dolorem doloribus dolorum ducimus ea excepturi
-            facilis harum ipsam iure, maxime nihil non officia provident quaerat quas quia quisquam quos repellendus
-            reprehenderit sunt unde velit voluptatem. Cumque exercitationem fuga id magni quisquam voluptate.
-            Accusantium, assumenda deleniti deserunt distinctio doloribus esse facilis hic laudantium magnam minima
+            Let's get the required dependencies installed. Open the terminal in your IDE of choice and type <em>npm i
+            nodemon -g</em> which will monitor our files and automatically restarts the server when we save. Now let's
+            do <em>npm init</em> you can do <em>npm init -y</em> to automatically answer yes to all the questions. npm
+            init will get our package.json file which NPM will read, so it knows what packages are installed for our
+            project. Now change "main":"index.js", to "main":"server.js",
         <pre>
             <code class="language-jsx">
 const serveFile = async (filePath, contentType, response) => {

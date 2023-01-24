@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet"
-          href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/base16/onedark.min.css">
+          href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/base16/material-darker.min.css">
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
@@ -57,7 +57,7 @@
                 <td><a class="link" href="#Configuration">Configuration</a></td>
             </tr>
             <tr>
-                <td><a class="link" href="#Temp2">Temp2</a></td>
+                <td><a class="link" href="#Setup">Setup</a></td>
             </tr>
         </table>
 
@@ -114,7 +114,6 @@
             we will use to give unique IDs in our log.
         </p>
         <br>
-        <br>
         <p>
             In the package.json file add two scripts which will be "start" and "dev" we will use the dev script to run
             our server.
@@ -148,14 +147,44 @@
   }
 }
             </code>
-
         </pre>
-        <figure>
-            <a href="images/width=2968.jpg" target="_blank">
-                <img src="images/image85q.webp" alt="A Picture">
-            </a>
-        </figure>
     </div>
+    <div class="container">
+        <h2 id="Setup">Setup</h2>
+        <p>
+            Starting with logEvents.js we will create our logEvents module which we will use to log server requests to
+            the terminal and to a text file that will have a unique ID for each entry and the time of the event.
+        </p>
+        <pre>
+                <code>
+const {v4: uuid} = require('uuid');
+
+const fs = require('fs');
+const fsPromises = require('fs').promises;
+const path = require('path');
+
+const logEvents = async (message, logName) => {
+    const dateTime = `${format(new Date(), 'yyyyMMdd\tHH:mm:ss')}`;
+    const logItem = `${dateTime}\t${uuid()}\t${message}\n`;
+    try{
+        if (!fs.existsSync(path.join(__dirname, 'logs'))){
+            await fsPromises.mkdir(path.join(__dirname, 'logs'))
+        }
+        await fsPromises.appendFile(path.join(__dirname, 'logs', logName), logItem);
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+module.exports= logEvents;
+                </code>
+            </pre>
+    </div>
+    <figure>
+        <a href="images/width=2968.jpg" target="_blank">
+            <img src="images/image85q.webp" alt="A Picture">
+        </a>
+    </figure>
 </div>
 <footer>
     Made by Robin Begby @

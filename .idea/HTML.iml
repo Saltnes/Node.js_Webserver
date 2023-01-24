@@ -8,5 +8,6 @@
     <orderEntry type="library" name="highlight" level="application" />
     <orderEntry type="library" name="default" level="application" />
     <orderEntry type="library" name="github-dark" level="application" />
+    <orderEntry type="library" name="onedark" level="application" />
   </component>
 </module>

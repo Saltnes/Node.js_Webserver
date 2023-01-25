@@ -10,5 +10,6 @@
     <orderEntry type="library" name="github-dark" level="application" />
     <orderEntry type="library" name="onedark" level="application" />
     <orderEntry type="library" name="material-darker" level="application" />
+    <orderEntry type="library" name="highlightjs-copy" level="application" />
   </component>
 </module>

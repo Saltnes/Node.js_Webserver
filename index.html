@@ -14,6 +14,12 @@
           href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/base16/material-darker.min.css">
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+    />
 </head>
 <body>
 
@@ -24,17 +30,10 @@
             <li id="MoveToTop"><a href="index.html">Home</a></li>
         </ul>
     </nav>
-    <a class="cta" href="contact.html">About</a>
-    <p class="menu cta">Menu</p>
+    <a class="cta" href="contact.html">Documentation</a>
+    <a class="menu cta" href="contact.html">Documentation</a>
 </header>
 
-<div id="mobile__menu" class="overlay">
-    <a class="close">&times;</a>
-    <div class="overlay__content">
-        <a href="index.html">Home</a>
-        <a href="contact.html">About</a>
-    </div>
-</div>
 
 <div class="content">
     <div class="container">
@@ -72,8 +71,7 @@
             time, date and what has been requested. Which will look something like this for the terminal and for the
             logfile itself below that:
         </p>
-        <pre>
-        <code>
+        <pre><code>
 /index.html GET
 /css/style.css GET
 /JS/mobile.js GET
@@ -87,8 +85,7 @@
 20230125	09:06:09	355b3a96-0f34-455e-9234-3555a584f453	/images/image85q.webp	GET
 20230125	09:06:09	387df466-ef6c-453e-a7f5-802ab56949fc	/images/logo.svg	GET
 20230125	09:06:09	5f322743-8d12-4455-9212-d72ec1582c8a	/images/logo.svg	GET
-        </code>
-    </pre>
+        </code></pre>
     </div>
 
     <!-- NODE SETUP = INSTALL REQUIRED DEPENDENCIES ETC. FILE DIRECTORIES.... | nmp i nodemon -g | globaly install nodemon | npm i date-fns  | npm i uuid | npm i nodemon -D|-->
@@ -123,11 +120,11 @@
     "dev": "nodemon server"
   },
     </code></pre>
+        <br/>
         <p>
-        Now our package file should look something like this:
+            Now our package file should look something like this:
         </p>
-        <pre>
-            <code class="language-json">
+        <pre><code class="language-json">
 {
   "name": "your-project-name",
   "version": "1.0.0",
@@ -147,8 +144,7 @@
     "nodemon": "^2.0.12"
   }
 }
-            </code>
-        </pre>
+            </code></pre>
     </div>
     <div class="container">
         <h2 id="Setup">Setup</h2>
@@ -157,8 +153,7 @@
             the terminal and to a text file that will have a unique ID for each entry and the time of the event. Feel
             free to change the date format to one that fits your needs this is done by editing "const dateTime"
         </p>
-        <pre>
-                <code class="language-javascript">
+        <pre><code class="language-javascript">
 const {v4: uuid} = require('uuid');
 
 const fs = require('fs');
@@ -179,14 +174,13 @@ const logEvents = async (message, logName) => {
 }
 
 module.exports= logEvents;
-                </code>
-            </pre>
+                </code></pre>
+        <br/>
         <p>
             Now that our logEvents.js is done and exported for use in our server.js we can start setting up the server
             itself. We begin by importing the required packages then we set our desired port.
         </p>
-        <pre>
-            <code class="language-js">
+        <pre><code class="language-js">
 const http = require('http');
 const path = require('path');
 const fs = require('fs');
@@ -220,20 +214,22 @@ const serveFile = async (filePath, contentType, response) => {
         response.end();
     }
 }
-            </code>
-        </pre>
+            </code></pre>
     </div>
-    <figure>
-        <a href="images/width=2968.jpg" target="_blank">
-            <img src="images/image85q.webp" alt="A Picture">
-        </a>
-    </figure>
+    <div class="container">
+        <figure>
+            <a href="images/width=2968.jpg" target="_blank">
+                <img src="images/image85q.webp" alt="A Picture">
+            </a>
+        </figure>
+    </div>
 </div>
 <footer>
     Made by Robin Begby @
     <a class="link" href="mailto:robinbeg@viken.no">Robinbeg@viken.no</a>
     <a class="link centerfooter" href="#MoveToTop">Move to top</a>
 </footer>
+<script>hljs.addPlugin(new CopyButtonPlugin());</script>
 <script type="text/javascript" src="JS/mobile.js"></script>
 </body>
 </html>

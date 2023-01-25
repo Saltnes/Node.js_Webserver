@@ -9,5 +9,6 @@
     <orderEntry type="library" name="default" level="application" />
     <orderEntry type="library" name="github-dark" level="application" />
     <orderEntry type="library" name="onedark" level="application" />
+    <orderEntry type="library" name="material-darker" level="application" />
   </component>
 </module>

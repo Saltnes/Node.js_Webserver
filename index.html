@@ -153,7 +153,8 @@
         <h2 id="Setup">Setup</h2>
         <p>
             Starting with logEvents.js we will create our logEvents module which we will use to log server requests to
-            the terminal and to a text file that will have a unique ID for each entry and the time of the event.
+            the terminal and to a text file that will have a unique ID for each entry and the time of the event. Feel
+            free to change the date format to one that fits your needs this is done by editing "const dateTime"
         </p>
         <pre>
                 <code>
@@ -179,6 +180,47 @@ const logEvents = async (message, logName) => {
 module.exports= logEvents;
                 </code>
             </pre>
+        <p>
+            Now that our logEvents.js is done and exported for use in our server.js we can start setting up the server
+            itself. We begin by importing the required packages then we set our desired port.
+        </p>
+        <pre>
+            <code class="language-js">
+const http = require('http');
+const path = require('path');
+const fs = require('fs');
+const fsPromises = require('fs').promises;
+
+const logEvents = require('./logEvents');
+const EventEmitter = require('events');
+
+class MyEmitter extends EventEmitter {
+}
+const myEmitter = new MyEmitter();
+myEmitter.on('log', (msg, fileName) => logEvents(msg, fileName));
+const PORT = process.env.PORT || 3500; // <-- Change to your desired port here
+
+const serveFile = async (filePath, contentType, response) => {
+    try {
+        const rawData = await fsPromises.readFile(
+            filePath,
+            !contentType.includes('image', 'video') ? 'utf-8' : '');
+        const data = contentType === 'application/json' ? JSON.parse(rawData) : rawData;
+        response.writeHead(
+            filePath.includes('404.html') ? 404 : 200,
+            {'Content-Type': contentType})
+        response.end(
+            contentType === 'application/json' ? JSON.stringify(data) : data
+        );
+    } catch (err) {
+        console.log(err);
+        myEmitter.emit('log', `${err.name}: ${err.message}`, 'errLog.txt')
+        response.statusCode = 500;
+        response.end();
+    }
+}
+            </code>
+        </pre>
     </div>
     <figure>
         <a href="images/width=2968.jpg" target="_blank">

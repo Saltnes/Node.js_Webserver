@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>YOUR WEBSITE NAME HERE</title>
-    <meta name="description" content="DESCRIBE  YOUR WEBSITES CONTENT / PURPOSE HERE">
+    <title>How to: Node.js Webserver</title>
+    <meta name="description" content="Tutorial on how to setup a webserver using node.js">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="images/logo.svg">
     <link rel="stylesheet" href="css/style.css">
@@ -14,7 +14,6 @@
           href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/base16/material-darker.min.css">
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-
 </head>
 <body>
 
@@ -75,19 +74,19 @@
         </p>
         <pre>
         <code>
-/ GET
+/index.html GET
 /css/style.css GET
 /JS/mobile.js GET
 /images/logo.svg GET
 /images/image85q.webp GET
 /images/logo.svg GET
 
-20230124	10:30:17	812297ca-53d4-4545-88c6-7bc672878405	/	GET
-20230124	10:30:17	13cf030e-cb0e-448d-9d2b-93dd83650284	/css/style.css	GET
-20230124	10:30:17	6f8e980a-7a79-48a8-9d32-cfcf62712c35	/JS/mobile.js	GET
-20230124	10:30:17	87a0340f-a821-4db6-96c5-8674f5eec223	/images/logo.svg	GET
-20230124	10:30:17	e3717a9a-0528-43b4-8dd1-1cd15bf9f5d8	/images/image85q.webp	GET
-20230124	10:30:17	6c9cc053-48bc-414f-afba-99c8805b60c0	/images/logo.svg	GET
+20230125	09:06:09	06c0cbe9-a2e1-40af-9e2f-74ac90123d10	/index.html	GET
+20230125	09:06:09	8c36035f-dde9-4b99-9e3f-1330e758bfc2	/css/style.css	GET
+20230125	09:06:09	6a426464-3a8a-4d6d-98a0-dceba958b034	/JS/mobile.js	GET
+20230125	09:06:09	355b3a96-0f34-455e-9234-3555a584f453	/images/image85q.webp	GET
+20230125	09:06:09	387df466-ef6c-453e-a7f5-802ab56949fc	/images/logo.svg	GET
+20230125	09:06:09	5f322743-8d12-4455-9212-d72ec1582c8a	/images/logo.svg	GET
         </code>
     </pre>
     </div>
@@ -110,19 +109,21 @@
             GitHub
             you will have to run
             <br/><b><em>npm install</em></b> to install the dependencies needed for the project.<br/> Write <b><em>npm i
-            nodemon -D</em></b> to install nodemon as a dev dependency.</br> Now type <b><em>npm i uuid</em></b> which
+            nodemon -D</em></b> to install nodemon as a dev dependency.<br/> Now type <b><em>npm i uuid</em></b> which
             we will use to give unique IDs in our log.
         </p>
         <br>
         <p>
             In the package.json file add two scripts which will be "start" and "dev" we will use the dev script to run
             our server.
+        </p>
         <pre><code>
 "scripts": {
     "start": "node server",
     "dev": "nodemon server"
   },
     </code></pre>
+        <p>
         Now our package file should look something like this:
         </p>
         <pre>
@@ -157,7 +158,7 @@
             free to change the date format to one that fits your needs this is done by editing "const dateTime"
         </p>
         <pre>
-                <code>
+                <code class="language-javascript">
 const {v4: uuid} = require('uuid');
 
 const fs = require('fs');
